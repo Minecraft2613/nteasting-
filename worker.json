@@ -1,14 +1,30 @@
 {
   "plugin": {
-    "latest_version": "1.4.1",
+    "latest_version": "1.5",
     "features": [
-      "Google 'AQ.' API Key Support: Added full compatibility for Google's new service-account-bound 'AQ.' API key prefix format alongside the legacy 'AIza' format in all validation and command flows (applies to both v1.3 and v1.4).",
-      "Overloaded Key Logger Masking: Fixed a security leak in v1.3 where raw global API keys were printed in console rate-limit warnings; keys are now securely masked to show only the last 4 characters (e.g. '***xxxx')."
+      "⚠️ Testing Build: NSR-AI v1.5 is currently under active testing. All features listed below are in the testing phase and may be subject to change before the stable release.",
+      "In-Game Version & Changelog Viewer: New /ai version, /ai version bug, and /ai version security commands display live version-pinned changelogs asynchronously in-game without blocking the server thread.",
+      "Dual Management Architecture: /aia addon now exclusively manages .jar addons while /aia plugin is a brand-new inspector for external API integrations, each with their own tab completions.",
+      "Human-Resonant System Prompts: Built-in ecosystem-aware identity prompt with strict anti-prompt-injection guards so players cannot override the AI's Minecraft companion identity.",
+      "NSR-AI-API 3.5 Open-Source API: Facade delegation, async interceptors, error catchers, RAG bridge, pet stat manipulation, and SimpleAddon builder for native Bukkit plugin integration.",
+      "Google 'AQ.' API Key Support: Added full compatibility for Google's new service-account-bound 'AQ.' API key prefix format alongside the legacy 'AIza' format.",
+      "Overloaded Key Logger Masking: Fixed a security leak in v1.3 where raw global API keys were printed in console rate-limit warnings; keys are now masked to show only the last 4 characters (e.g. '***xxxx').",
+      "Zero-Allocation Regex Engine: 12+ pre-compiled static final patterns eliminate thousands of object allocations per minute during high-frequency chat processing.",
+      "Full Modular Architecture: Monolithic 2,500-line main class split into ConfigManager, PetSystem, ErrorLogger, KnowledgeManager, ApiKeyManager, MemoryManager, and HelpCommand.",
+      "Gold Standard Bug Audit: 140+ bugs, logic exceptions, and structural edge cases resolved across the entire plugin codebase."
     ]
   },
   "security": {
     "version": "3.5",
-    "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/security/security-3.5.jar"
+    "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/security/security-3.5.jar",
+    "features": [
+      "SHA-256 Integrity Verification: Remote security JAR downloads are verified via SHA-256 checksum before classloading to prevent tampered JAR execution.",
+      "Atomic ClassLoader Swapping: Thread-synchronized atomic swapping of URL classloaders during live security reloads prevents race conditions.",
+      "Main-Thread Reload Dispatching: Dynamic classloader reloads are guided onto the main Bukkit thread to comply with Bukkit API safety rules.",
+      "Uninitialized State Guard: Prevents cyclic updater restarts if the initial JVM classload of the security JAR fails on startup.",
+      "Dead Code Removal: Cleaned up all unreferenced updater variables and finalized remote manifest mapping fields.",
+      "Explicit Addon Blocking Diagnostics: Added clear warning logging when addon validation is blocked due to an uninitialized security state."
+    ]
   },
   "bugfix_mapping": {
     "1.4": {
@@ -16,10 +32,24 @@
       "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
       "restart_required": true
     },
-    "1.4.1": {
-      "version": "1.4.1",
-      "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
-      "restart_required": true
+    "1.5": {
+      "version": "1.5",
+      "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.5/NSR-AI-1.5.jar",
+      "restart_required": true,
+      "features": [
+        "⚠️ Testing Bug Version: NSR-AI v1.5 bug module is currently in the testing phase. The fixes listed below are being actively verified before the stable release.",
+        "Global API Key Rotation: Implemented true round-robin rotation for global API keys to evenly distribute player loads.",
+        "Startup NPE Resolution: Reordered plugin enablement phase to prevent NullPointerExceptions during early manager checks.",
+        "Claude System Role Fix: Corrected a critical protocol bug where system instructions were being sent in the wrong field, causing Claude to ignore identity prompts.",
+        "Gemini Safety Guard: Added mandatory candidates presence checks to prevent cryptic JSON errors on empty or filtered AI responses.",
+        "Memory Leak Resolution: Player cooldowns and request context caches are now properly cleared on disconnect.",
+        "Asynchronous Chat I/O Fix: Offloaded the expensive getChatEntry disk-read loop to async worker threads to eliminate main-thread lag.",
+        "RAG Pipeline Data-Loss Fix: Unified RAG composite key delimiters to prevent silent array index exceptions during save.",
+        "Bounded LRU Crypto Cache: Replaced the unbounded concurrent key cache with a bounded LRU cache (max 512) to prevent memory leaks.",
+        "Thread-Safe DateTimeFormatter: Replaced all legacy SimpleDateFormat instances with modern DateTimeFormatter to eliminate concurrent date corruption.",
+        "Economy Removal: Fully removed unused internal Vault integration to reduce plugin size and startup times.",
+        "140+ Additional Fixes: Full Gold Standard audit resolving logic exceptions, structural edge cases, and security vulnerabilities across the entire codebase."
+      ]
     }
   }
-} 
+}
