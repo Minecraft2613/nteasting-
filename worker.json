@@ -1,0 +1,25 @@
+{
+  "plugin": {
+    "latest_version": "1.4.1",
+    "features": [
+      "Google 'AQ.' API Key Support: Added full compatibility for Google's new service-account-bound 'AQ.' API key prefix format alongside the legacy 'AIza' format in all validation and command flows (applies to both v1.3 and v1.4).",
+      "Overloaded Key Logger Masking: Fixed a security leak in v1.3 where raw global API keys were printed in console rate-limit warnings; keys are now securely masked to show only the last 4 characters (e.g. '***xxxx')."
+    ]
+  },
+  "security": {
+    "version": "3.5",
+    "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/security/security-3.5.jar"
+  },
+  "bugfix_mapping": {
+    "1.4": {
+      "version": "1.4.1",
+      "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
+      "restart_required": true
+    },
+    "1.4.1": {
+      "version": "1.4.1",
+      "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
+      "restart_required": true
+    }
+  }
+} 
