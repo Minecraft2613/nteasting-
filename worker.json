@@ -40,6 +40,7 @@
   "Silently resets bug.txt version on startup if the running plugin version is newer than the stored version to avoid redundant bug fix downloads",
   "Updates /ai version bug command output to display the correct plugin version and bug version in the format: NSR-AI [pluginVersion]v bug version is [bugVersion]",
   "Adds support for remote bug fix changelogs, displaying all bug fix details and feature changes asynchronously when using /ai version bug",
+  "Adds support for remote security changelogs, displaying all security patch details and feature changes asynchronously when using /ai version security",
   "Fixes the knowledge base system by adding fuzzy/keyword search fallback if no exact match is found",
   "Resolves the admin knowledge key retrieval bug in searchKnowledge() so that admin-only entries are correctly returned"
 ]
