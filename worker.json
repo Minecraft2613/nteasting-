@@ -32,9 +32,14 @@
       "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
       "restart_required": true
     },
+    "1.4.1": {
+      "version": "1.4.2",
+      "download_url": "https://github.com/Minecraft2613/nteasting-/raw/refs/heads/main/NSR-AI-1.4.2.jar",
+      "restart_required": true
+    },
     "1.4.2": {
       "version": "1.4.2",
-      "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
+      "download_url": "https://github.com/Minecraft2613/nteasting-/raw/refs/heads/main/NSR-AI-1.4.2.jar",
       "restart_required": true,
       "features": [
   "Silently resets bug.txt version on startup if the running plugin version is newer than the stored version to avoid redundant bug fix downloads",
