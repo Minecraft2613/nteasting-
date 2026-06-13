@@ -1,6 +1,6 @@
 {
   "plugin": {
-    "latest_version": "1.5",
+    "latest_version": "1.4.2",
     "features": [
       "⚠️ Testing Build: NSR-AI v1.5 is currently under active testing. All features listed below are in the testing phase and may be subject to change before the stable release.",
       "In-Game Version & Changelog Viewer: New /ai version, /ai version bug, and /ai version security commands display live version-pinned changelogs asynchronously in-game without blocking the server thread.",
@@ -31,6 +31,18 @@
       "version": "1.4.1",
       "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
       "restart_required": true
+    },
+    "1.4.2": {
+      "version": "1.4.2",
+      "download_url": "https://github.com/BlackForgeStudio/NSR-AI-API/raw/refs/heads/backend/bug/NSR-AI-1.4/NSR-AI-1.4.1.jar",
+      "restart_required": true,
+      "features": [
+  "Silently resets bug.txt version on startup if the running plugin version is newer than the stored version to avoid redundant bug fix downloads",
+  "Updates /ai version bug command output to display the correct plugin version and bug version in the format: NSR-AI [pluginVersion]v bug version is [bugVersion]",
+  "Adds support for remote bug fix changelogs, displaying all bug fix details and feature changes asynchronously when using /ai version bug",
+  "Fixes the knowledge base system by adding fuzzy/keyword search fallback if no exact match is found",
+  "Resolves the admin knowledge key retrieval bug in searchKnowledge() so that admin-only entries are correctly returned"
+]
     },
     "1.5": {
       "version": "1.5",
